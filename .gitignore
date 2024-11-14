@@ -1,0 +1,12 @@
+# Visual Studio specific files
+.vs/
+*.user
+*.suo
+
+# Build results
+bin/
+obj/
+
+# Other files
+*.log
+*.tmp
