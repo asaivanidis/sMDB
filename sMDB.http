@@ -1,6 +1,6 @@
-@sMDB_HostAddress = http://localhost:5020
+@SMDb_HostAddress = http://localhost:5020
 
-GET {{sMDB_HostAddress}}//
+GET {{SMDb_HostAddress}}//
 Accept: application/json
 
 ###

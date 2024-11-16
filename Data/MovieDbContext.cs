@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using sMDB.Models;
+using SMDb.Models;
 
-namespace sMDB.Data
+namespace SMDb.Data
 {
     public class MovieDbContext : DbContext
     {

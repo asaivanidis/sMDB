@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore;
 
-namespace sMDB.Data
+namespace SMDb.Data
 {
     public class MovieDbContextFactory : IDesignTimeDbContextFactory<MovieDbContext>
     {

@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using sMDB.Data;
+using SMDb.Data;
 
 #nullable disable
 
-namespace sMDB.Migrations
+namespace SMDb.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
     [Migration("20241113134806_InitialCreate")]
@@ -25,7 +25,7 @@ namespace sMDB.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("sMDB.Models.Movie", b =>
+            modelBuilder.Entity("SMDb.Models.Movie", b =>
                 {
                     b.Property<int>("MovieId")
                         .ValueGeneratedOnAdd()
