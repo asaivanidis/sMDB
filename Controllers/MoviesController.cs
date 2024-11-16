@@ -41,6 +41,7 @@ namespace SMDb.Controllers
         [HttpPost]
         public async Task<IActionResult> AddMovie([FromBody] Movie movie)
         {
+
             _logger.LogInformation("Handling POST request for adding a movie");
             _context.Movies.Add(movie);
             await _context.SaveChangesAsync();

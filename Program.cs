@@ -18,7 +18,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:3000") // React app origin
+        policy.WithOrigins("http://localhost:3000", "https://smdb.saiva.space") // React app origin
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
