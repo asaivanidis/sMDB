@@ -24,8 +24,14 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Define port 5000
+builder.WebHost.UseUrls("http://0.0.0.0:5000");
+
 
 var app = builder.Build();
+
+// Setup default mapping for testing
+app.MapGet("/", () => "Hello, World!");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
