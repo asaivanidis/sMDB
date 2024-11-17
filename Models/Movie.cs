@@ -8,9 +8,7 @@ namespace SMDb.Models
         public int MovieId { get; set; }
         public required string Title { get; set; }
         public required string Description { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime ReleaseDate { get; set; }
+        public DateOnly ReleaseDate { get; set; }
         public string? ImageUrl { get; set; }
         public string? TrailerUrl { get; set; }
 
