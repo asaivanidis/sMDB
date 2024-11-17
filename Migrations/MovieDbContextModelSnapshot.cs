@@ -51,7 +51,7 @@ namespace SMDb.Migrations
 
                     b.HasKey("MovieId");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movies", (string)null);
                 });
 #pragma warning restore 612, 618
         }
