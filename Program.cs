@@ -10,8 +10,7 @@ builder.Services.AddSwaggerGen();
 
 // Adding the MovieDBContext
 builder.Services.AddDbContext<MovieDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MovieDatabase")));
-
+    options.UseNpgsql(builder.Configuration.GetConnectionString("MovieDatabase")));
 
 // Allow cross-origin requests (for local development)
 builder.Services.AddCors(options =>

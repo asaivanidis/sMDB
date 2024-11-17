@@ -9,5 +9,12 @@ namespace SMDb.Data
 
         public DbSet<Movie> Movies { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseNpgsql("Host=smdb-database;Database=smdb-database;Username=smdb;Password=lHckjHWUNGrKgPYJdw9z;");
+            }
+        }
     }
 }

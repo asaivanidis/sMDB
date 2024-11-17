@@ -8,7 +8,7 @@ namespace SMDb.Data
         public MovieDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<MovieDbContext>();
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=MovieDB;Trusted_Connection=True;");
+            optionsBuilder.UseNpgsql("Host=smdb-database;Database=smdb-database;Username=smdb;Password=lHckjHWUNGrKgPYJdw9z;");
             return new MovieDbContext(optionsBuilder.Options);
         }
     }
