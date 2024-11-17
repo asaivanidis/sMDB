@@ -12,7 +12,7 @@ using SMDb.Data;
 namespace smdb.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    [Migration("20241117175249_InitialCreate")]
+    [Migration("20241117185157_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -40,8 +40,8 @@ namespace smdb.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateOnly>("ReleaseDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("Title")
                         .IsRequired()
