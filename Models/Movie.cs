@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace SMDb.Models
+﻿namespace SMDb.Models
 {
     // Model view of the Movie entries in the database
     public class Movie
@@ -9,8 +7,9 @@ namespace SMDb.Models
         public required string Title { get; set; }
         public required string Description { get; set; }
         public DateOnly ReleaseDate { get; set; }
-        public string? ImageUrl { get; set; }
         public string? TrailerUrl { get; set; }
+        public string? CoverImageUrl { get; set; } // Cover image
+        public List<string> ImageUrls { get; set; } = new List<string>(); // Additional images
 
 
     }

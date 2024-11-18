@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SMDb.Data;
 using SMDb.Models;
@@ -11,11 +13,19 @@ namespace SMDb.Controllers
     {
         private readonly MovieDbContext _context;
         private readonly ILogger<MoviesController> _logger;
+        private readonly Cloudinary _cloudinary; // Cloudinary API client
 
-        public MoviesController(MovieDbContext context, ILogger<MoviesController> logger)
+        public MoviesController(MovieDbContext context, ILogger<MoviesController> logger, IConfiguration config)
         {
             _logger = logger;
             _context = context;
+
+            var account = new Account(
+           config["Cloudinary:CloudName"],
+           config["Cloudinary:ApiKey"],
+           config["Cloudinary:ApiSecret"]
+       );
+            _cloudinary = new Cloudinary(account);
         }
 
         // GET request to get all movies api/<MoviesController>
@@ -70,6 +80,27 @@ namespace SMDb.Controllers
             _context.Movies.Remove(movie);
             await _context.SaveChangesAsync();
             return NoContent();
+        }
+
+        // POST request to upload images to cloudinary
+        [HttpPost("upload")]
+        public async Task<IActionResult> UploadImage(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("File is required");
+            }
+            System.Diagnostics.Debug.WriteLine("uploading image");
+            var uploadParams = new ImageUploadParams
+            {
+                File = new FileDescription(file.FileName, file.OpenReadStream()),
+                Folder = "movies"
+            };
+
+            var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+
+            System.Diagnostics.Debug.WriteLine(uploadResult.SecureUrl.ToString());
+            return Ok(new { Url = uploadResult.SecureUrl.ToString() });
         }
     }
 }
