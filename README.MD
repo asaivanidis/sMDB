@@ -2,6 +2,8 @@
 
 SMDb is a web application for managing a movie database. Users can add, update, view, and delete movies with details such as descriptions, release dates, cover images, trailers, and additional images. This project uses a React frontend and an ASP.NET Core backend with a PostgreSQL database.
 
+The React project that holds the UI can be found at [SMDb-UI](https://github.com/asaivanidis/smdb-ui)
+
 ## Features
 
 - Add new movies with:
