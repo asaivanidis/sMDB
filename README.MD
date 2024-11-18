@@ -173,13 +173,11 @@ Response:
     }
 ```
 
-Screenshots
-Home Page
+### Screenshots
+Home Page - Display of movies with cover images and titles.
 <img src="./Images/Home.png" alt="Home screen"/>
 
-Display of movies with cover images and titles.
 
-Movie Details Page
+Movie Details Page - A carousel of images with details and an edit button.
 <img src="./Images/Details.png" alt="Home screen"/>
-A carousel of images with details and an edit button.
 
