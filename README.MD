@@ -175,7 +175,7 @@ Response:
 
 Screenshots
 Home Page
-![Local Image Example](./Images/Screenshot 2024-11-18 074844.png "Movie Poster")
+(./Images/Screenshot 2024-11-18 074844.png "Movie Poster")
 
 Display of movies with cover images and titles.
 Movie Details Page
