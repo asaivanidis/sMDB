@@ -175,10 +175,11 @@ Response:
 
 Screenshots
 Home Page
-<img src="./Images/Screenshot 2024-11-18 074844.png" alt="Home screen"/>
+<img src="./Images/Home.png" alt="Home screen"/>
 
 Display of movies with cover images and titles.
-Movie Details Page
 
+Movie Details Page
+<img src="./Images/Details.png" alt="Home screen"/>
 A carousel of images with details and an edit button.
 
