@@ -4,6 +4,8 @@ SMDb is a web application for managing a movie database. Users can add, update, 
 
 The React project that holds the UI can be found at [SMDb-UI](https://github.com/asaivanidis/smdb-ui)
 
+A demo setup is currently hosted at [SMDb-API](https://smdb.saiva.space/)
+
 ## Features
 
 - Add new movies with:
